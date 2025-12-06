@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -12,15 +13,52 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  metadataBase: new URL('https://yourdomain.com/'), // Update with your actual domain
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Adam Syahir - Software Engineer',
+    template: '%s | Adam Syahir'
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+  description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies. Specializing in React, Next.js, and UI component libraries.',
+  keywords: ['Adam Syahir', 'Software Engineer', 'Software Developer', 'React Developer', 'Next.js', 'Web Development', 'Frontend Developer', 'Malaysia Developer'],
+  authors: [{ name: 'Adam Syahir', url: 'https://github.com/adsyahir' }],
+  creator: 'Adam Syahir',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://yourdomain.com/',
+    title: 'Adam Syahir - Software Engineer',
+    description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies.',
+    siteName: 'Adam Syahir',
+    images: [
+      {
+        url: '/og-image.jpg', // Add an Open Graph image to /public folder
+        width: 1200,
+        height: 630,
+        alt: 'Adam Syahir - Software Engineer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Adam Syahir - Software Engineer',
+    description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies.',
+    images: ['/og-image.jpg'], // Add a Twitter card image to /public folder
+    creator: '@yourtwitterhandle', // Update with your Twitter handle if you have one
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const geist = Geist({
@@ -43,6 +81,11 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics
+            GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          />
+        )}
         <ThemeProvider
           enableSystem={true}
           attribute="class"
