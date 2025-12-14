@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     type: 'Website',
     client: 'Personal',
     languages: ['ReactJS'],
-    preview: 'https://kad-kahwin-digital-adsyahir.netlify.appadd',
+    preview: 'https://kad-kahwin-digital-adsyahir.netlify.app',
     github: 'https://github.com/adsyahir/digital-wedding-card',
     link: 'https://github.com/adsyahir/digital-wedding-card',
     video:
@@ -306,7 +306,7 @@ export const TECH_STACK: TechStack[] = [
   { name: 'Tailwind CSS', category: 'Styling' },
   { name: 'Node.js', category: 'Backend' },
   { name: 'Laravel', category: 'Backend' },
-  { name: 'Java Spring (currently learning)', category: 'Backend' },
+  { name: 'Java Spring', category: 'Backend · Learning' },
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
   { name: 'MongoDB', category: 'Database' },
