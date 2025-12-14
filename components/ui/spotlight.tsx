@@ -12,11 +12,12 @@ export type SpotlightProps = {
 export function Spotlight({
   className,
   size = 200,
-  springOptions = { bounce: 0 },
+  springOptions = { bounce: 0, stiffness: 150, damping: 15 },
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const [parentElement, setParentElement] = useState<HTMLElement | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
 
   const mouseX = useSpring(0, springOptions)
   const mouseY = useSpring(0, springOptions)
@@ -25,15 +26,20 @@ export function Spotlight({
   const spotlightTop = useTransform(mouseY, (y) => `${y - size / 2}px`)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
+
     if (containerRef.current) {
       const parent = containerRef.current.parentElement
       if (parent) {
         parent.style.position = 'relative'
-        parent.style.overflow = 'hidden'
         setParentElement(parent)
       }
     }
-  }, [])
+  }, [isMounted])
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
@@ -59,12 +65,15 @@ export function Spotlight({
     }
   }, [parentElement, handleMouseMove])
 
+  if (!isMounted) {
+    return null
+  }
+
   return (
     <motion.div
       ref={containerRef}
       className={cn(
-        'pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200',
-        'from-zinc-50 via-zinc-100 to-zinc-200',
+        'pointer-events-none absolute z-0 rounded-full bg-gradient-radial blur-2xl transition-opacity duration-300',
         isHovered ? 'opacity-100' : 'opacity-0',
         className,
       )}

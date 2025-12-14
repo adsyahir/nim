@@ -39,9 +39,11 @@ const GAMING_PC: SpecItem[] = [
   },
   { label: 'Power Supply', value: 'Aigo PSU 550W GP550 (80+ Bronze)' },
   { label: 'Cooling', value: 'Cooler Master MasterLiquid 240L ARGB' },
-  { label: 'Chassis', value: 'Tecware Nexus M TG M-ATX (Black)' },
-  { label: 'Laptop', value: 'Macbook Pro M4 14-inch 16gb 512gb' },
+  { label: 'Chassis', value: 'Tecware Forge M2 RGB Case (MATX)' },
+]
 
+const LAPTOP: SpecItem[] = [
+  { label: 'Model', value: 'Macbook Pro M4 14-inch 16gb 512gb' },
 ]
 
 const PERIPHERALS: SpecItem[] = [
@@ -78,24 +80,26 @@ const PERIPHERALS: SpecItem[] = [
 
 function SpecificationItem({ label, value }: SpecItem) {
   return (
-    <div className="flex flex-col gap-1 rounded-xl bg-zinc-50/40 p-4 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-      <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-        {label}
-      </h3>
-      {Array.isArray(value) ? (
-        <div className="space-y-1">
-          {value.map((item, index) => (
-            <p
-              key={index}
-              className="text-base text-zinc-900 dark:text-zinc-100"
-            >
-              {item}
-            </p>
-          ))}
-        </div>
-      ) : (
-        <p className="text-base text-zinc-900 dark:text-zinc-100">{value}</p>
-      )}
+    <div className="relative rounded-2xl border border-zinc-200 bg-transparent p-4 dark:border-zinc-800">
+      <div className="relative flex flex-col gap-1">
+        <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
+          {label}
+        </h3>
+        {Array.isArray(value) ? (
+          <div className="space-y-1">
+            {value.map((item, index) => (
+              <p
+                key={index}
+                className="text-base text-zinc-900 dark:text-zinc-100"
+              >
+                {item}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p className="text-base text-zinc-900 dark:text-zinc-100">{value}</p>
+        )}
+      </div>
     </div>
   )
 }
@@ -122,9 +126,21 @@ export default function Specification() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h2 className="mb-5 text-2xl font-medium">Desktop</h2>
+        <h2 className="mb-5 text-2xl font-medium">PC</h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {GAMING_PC.map((spec) => (
+            <SpecificationItem key={spec.label} {...spec} />
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h2 className="mb-5 text-2xl font-medium">Laptop</h2>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {LAPTOP.map((spec) => (
             <SpecificationItem key={spec.label} {...spec} />
           ))}
         </div>

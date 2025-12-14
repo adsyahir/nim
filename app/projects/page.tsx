@@ -1,6 +1,8 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { XIcon, ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 import {
   MorphingDialog,
   MorphingDialogTrigger,
@@ -29,11 +31,27 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
-type ProjectVideoProps = {
-  src: string
+type ProjectImageProps = {
+  images: string[]
+  alt: string
 }
 
-function ProjectVideo({ src }: ProjectVideoProps) {
+function ProjectImage({ images, alt }: ProjectImageProps) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const hasMultipleImages = images.length > 1
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const goToImage = (index: number) => {
+    setCurrentIndex(index)
+  }
+
   return (
     <MorphingDialog
       transition={{
@@ -43,23 +61,55 @@ function ProjectVideo({ src }: ProjectVideoProps) {
       }}
     >
       <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
+        <Image
+          src={images[0]}
+          alt={alt}
+          width={800}
+          height={450}
+          className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
         <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
+          <Image
+            src={images[currentIndex]}
+            alt={`${alt} - Image ${currentIndex + 1}`}
+            width={1920}
+            height={1080}
+            className="aspect-video h-[50vh] w-full rounded-xl object-contain md:h-[70vh]"
           />
+          {hasMultipleImages && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
+              </button>
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex
+                        ? 'w-8 bg-white dark:bg-zinc-100'
+                        : 'w-2 bg-white/60 dark:bg-zinc-100/60 hover:bg-white/80 dark:hover:bg-zinc-100/80'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </MorphingDialogContent>
         <MorphingDialogClose
           className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
@@ -93,7 +143,7 @@ export default function Portfolio() {
       >
         <h1 className="mb-8 text-3xl font-medium">Projects</h1>
         <p className="mb-8 text-zinc-600 dark:text-zinc-400">
-          A collection of projects I've worked on, ranging from UI component libraries
+          A collection of projects I've worked on, ranging from websites
           to full-scale web applications. Each project represents a unique challenge and
           learning experience.
         </p>
@@ -102,7 +152,10 @@ export default function Portfolio() {
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-3">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <ProjectImage
+                  images={project.images || [project.image]}
+                  alt={project.name}
+                />
               </div>
               <div className="px-1 space-y-3">
                 <div>

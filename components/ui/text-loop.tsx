@@ -31,10 +31,15 @@ export function TextLoop({
   mode = 'popLayout',
 }: TextLoopProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMounted, setIsMounted] = useState(false)
   const items = Children.toArray(children)
 
   useEffect(() => {
-    if (!trigger) return
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!trigger || !isMounted) return
 
     const intervalMs = interval * 1000
     const timer = setInterval(() => {
@@ -45,12 +50,20 @@ export function TextLoop({
       })
     }, intervalMs)
     return () => clearInterval(timer)
-  }, [items.length, interval, onIndexChange, trigger])
+  }, [items.length, interval, onIndexChange, trigger, isMounted])
 
   const motionVariants: Variants = {
     initial: { y: 20, opacity: 0 },
     animate: { y: 0, opacity: 1 },
     exit: { y: -20, opacity: 0 },
+  }
+
+  if (!isMounted) {
+    return (
+      <div className={cn('relative inline-block whitespace-nowrap', className)}>
+        {items[0]}
+      </div>
+    )
   }
 
   return (

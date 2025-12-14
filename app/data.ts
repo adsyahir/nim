@@ -8,6 +8,8 @@ type Project = {
   github?: string
   link: string
   video: string
+  image: string
+  images?: string[]
   id: string
 }
 
@@ -48,16 +50,46 @@ type TechStack = {
 
 export const PROJECTS: Project[] = [
   {
+    name: 'Borak',
+    description: 'Real-time chat application with end-to-end encryption for secure messaging.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: ['Next.js', 'Node.js', 'WebSockets'],
+    preview: 'https://borak-staging.adsyahir.com/',
+    github: 'https://github.com/adsyahir/borak',
+    link: 'https://borak-staging.adsyahir.com/',
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/borak.png',
+    id: 'project-borak',
+  },
+  {
+    name: 'SnapWiFi',
+    description: 'Generate QR codes from WiFi credentials for easy network sharing.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: ['Nuxt.js', 'Vue.js', 'JavaScript'],
+    preview: 'https://snapwifi.adsyahir.com/',
+    github: 'https://github.com/adsyahir/snapwifi',
+    link: 'https://snapwifi.adsyahir.com/',
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/snapwifi.png',
+    images: ['/img/snapwifi.png'],
+    id: 'project0',
+  },
+  {
     name: 'Kad Kahwin Digital',
     description: 'A beautiful and interactive digital wedding invitation.',
     type: 'Website',
     client: 'Personal',
     languages: ['ReactJS'],
-    preview: 'https://malaysia-prayer-times-adsyahir.netlify.app',
+    preview: 'https://kad-kahwin-digital-adsyahir.netlify.appadd',
     github: 'https://github.com/adsyahir/digital-wedding-card',
     link: 'https://github.com/adsyahir/digital-wedding-card',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/kad-kahwin.png',
     id: 'project1',
   },
   {
@@ -71,6 +103,7 @@ export const PROJECTS: Project[] = [
     link: 'https://ip-address-tracker-adsyahir.netlify.app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    image: '/img/ip-address-tracker.png',
     id: 'project2',
   },
   {
@@ -83,6 +116,8 @@ export const PROJECTS: Project[] = [
     link: 'https://github.com/adsyahir/medirev2',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/medire.png',
+    images: ['/img/medire-1.jpg', '/img/medire-2.jpg', '/img/medire-3.jpg'],
     id: 'project3',
   },
   {
@@ -96,6 +131,8 @@ export const PROJECTS: Project[] = [
     link: 'https://malaysia-prayer-times-adsyahir.netlify.app/',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    image: '/img/waktu-solat.png',
+    images: ['/img/waktu-solat.png', '/img/waktu-solat-1.png'],
     id: 'project4',
   },
   {
@@ -109,6 +146,8 @@ export const PROJECTS: Project[] = [
     link: 'https://sunnyside-agency-landing-page-adsyahir.netlify.app/',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/sunny-side.png',
+    images: ['/img/sunnyside-1.png', '/img/sunnyside-2.png', '/img/sunnyside-3.png'],
     id: 'project5',
   },
   {
@@ -122,6 +161,8 @@ export const PROJECTS: Project[] = [
     link: 'https://speed-post-adsyahir.netlify.app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    image: '/img/speed-post.png',
+    images: ['/img/speed-post-1.png', '/img/speed-post-2.png', '/img/speed-post-3.png'],
     id: 'project6',
   },
   {
@@ -135,6 +176,7 @@ export const PROJECTS: Project[] = [
     link: 'https://tip-calculator-main-adsyahir.netlify.app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/tip-calculator-main.png',
     id: 'project7',
   },
   {
@@ -148,6 +190,8 @@ export const PROJECTS: Project[] = [
     link: 'https://calculator-app-main-adsyahir.netlify.app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    image: '/img/calculator.png',
+    images: ['/img/cal-1.png', '/img/cal-2.png', '/img/cal-3.png'],
     id: 'project8',
   },
   {
@@ -161,6 +205,8 @@ export const PROJECTS: Project[] = [
     link: 'https://agent-management-systems.herokuapp.com/',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/ams.png',
+    images: ['/img/ams-1.png', '/img/ams-2.png', '/img/ams-3.png'],
     id: 'project9',
   },
 ]

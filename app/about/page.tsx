@@ -59,7 +59,7 @@ export default function About() {
               I started my development journey in 2021, learning frontend
               development and building responsive websites. In 2022, I joined
               FAR Capital as an intern and quickly became a Junior Developer,
-              working on web applications and UI libraries.
+              working on web applications.
             </p>
 
             <p className="text-zinc-600 dark:text-zinc-400">
@@ -72,7 +72,7 @@ export default function About() {
               I'm passionate about modern web technologies and design systems. I
               believe in writing clean, maintainable code and creating user
               experiences that feel natural. When I'm not coding, I enjoy
-              exploring new tech, hitting the gym, playing games and badminton with friends.
+              exploring new tech, hitting the gym, and playing games and badminton with friends.
             </p>
           </div>
         </div>
