@@ -306,7 +306,7 @@ export const TECH_STACK: TechStack[] = [
   { name: 'Tailwind CSS', category: 'Styling' },
   { name: 'Node.js', category: 'Backend' },
   { name: 'Laravel', category: 'Backend' },
-  { name: 'Java Spring', category: 'Backend' },
+  { name: 'Java Spring (currently learning)', category: 'Backend' },
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
   { name: 'MongoDB', category: 'Database' },
