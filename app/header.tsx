@@ -24,12 +24,12 @@ export function Header() {
         >
           Projects
         </Link>
-        <Link
+        {/* <Link
           href="/specification"
           className="text-sm font-medium text-zinc-600 transition-colors hover:text-black dark:text-zinc-400 dark:hover:text-white"
         >
           Specification
-        </Link>
+        </Link> */}
       </nav>
       <div>
         <Link href="/" className="font-medium text-black dark:text-white">
