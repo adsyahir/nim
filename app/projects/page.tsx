@@ -68,29 +68,29 @@ function ProjectImage({ images, alt }: ProjectImageProps) {
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative mx-4 max-h-[85vh] max-w-[95vw] rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50 md:mx-0 md:max-w-[85vw]">
+        <MorphingDialogContent className="relative w-[calc(100vw-2rem)] max-w-[95vw] max-h-[85vh] rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50 md:w-auto md:max-w-[85vw]">
           <Image
             src={images[currentIndex]}
             alt={`${alt} - Image ${currentIndex + 1}`}
             width={1920}
             height={1080}
-            className="h-auto w-full max-h-[80vh] rounded-xl object-contain"
+            className="w-full h-auto max-h-[calc(85vh-1rem)] rounded-xl object-contain"
           />
           {hasMultipleImages && (
             <>
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white p-1.5 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700 md:left-4 md:p-2"
                 aria-label="Previous image"
               >
-                <ChevronLeft className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-zinc-900 dark:text-zinc-100" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white p-1.5 shadow-lg hover:bg-zinc-50 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700 md:right-4 md:p-2"
                 aria-label="Next image"
               >
-                <ChevronRight className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-zinc-900 dark:text-zinc-100" />
               </button>
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
                 {images.map((_, index) => (
@@ -110,7 +110,7 @@ function ProjectImage({ images, alt }: ProjectImageProps) {
           )}
         </MorphingDialogContent>
         <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+          className="fixed top-4 right-4 md:top-6 md:right-6 h-fit w-fit rounded-full bg-white p-1.5 md:p-1"
           variants={{
             initial: { opacity: 0 },
             animate: {
