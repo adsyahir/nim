@@ -75,17 +75,6 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-          Crafting thoughtful digital experiences that make a difference.
-          </p>
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
         <h3 className="mb-5 text-lg font-medium">Tech Stack</h3>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
           {TECH_STACK.map((tech) => (
@@ -126,8 +115,8 @@ export default function Personal() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
+                <div className="relative flex w-full flex-col gap-2 sm:flex-row sm:justify-between">
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title}
                     </h4>
@@ -135,7 +124,7 @@ export default function Personal() {
                       {job.company}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0">
                     {job.start} - {job.end}
                   </p>
                 </div>
@@ -161,8 +150,8 @@ export default function Personal() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
+                <div className="relative flex w-full flex-col gap-2 sm:flex-row sm:justify-between">
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-normal dark:text-zinc-100">
                       {cert.title}
                     </h4>
@@ -170,7 +159,7 @@ export default function Personal() {
                       {cert.organization}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0">
                     {cert.year}
                   </p>
                 </div>

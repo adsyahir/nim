@@ -70,13 +70,13 @@ function ProjectImage({ images, alt }: ProjectImageProps) {
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+        <MorphingDialogContent className="relative mx-4 max-h-[85vh] max-w-[95vw] rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50 md:mx-0 md:max-w-[85vw]">
           <Image
             src={images[currentIndex]}
             alt={`${alt} - Image ${currentIndex + 1}`}
             width={1920}
             height={1080}
-            className="aspect-video h-[50vh] w-full rounded-xl object-contain md:h-[70vh]"
+            className="h-auto w-full max-h-[80vh] rounded-xl object-contain"
           />
           {hasMultipleImages && (
             <>

@@ -18,35 +18,28 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Adam Syahir - Software Engineer',
+    default: 'Adam Syahir - Software Developer',
     template: '%s | Adam Syahir'
   },
-  description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies. Specializing in React, Next.js, and UI component libraries.',
-  keywords: ['Adam Syahir', 'Software Engineer', 'Software Developer', 'React Developer', 'Next.js', 'Web Development', 'Frontend Developer', 'Malaysia Developer'],
+  description: 'Software Developer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies. Specializing in React, Next.js, and UI component libraries.',
+  keywords: ['Adam Syahir', 'Software Engineer', 'Software Developer', 'Laravel Developer', 'Next.js', 'Web Development', 'Frontend Developer', 'Malaysia Developer', 'Backend Developer'],
   authors: [{ name: 'Adam Syahir', url: 'https://github.com/adsyahir' }],
   creator: 'Adam Syahir',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://yourdomain.com/',
-    title: 'Adam Syahir - Software Engineer',
-    description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies.',
+    title: 'Adam Syahir - Software Developer',
+    description: 'Software Developer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies.',
     siteName: 'Adam Syahir',
     images: [
       {
         url: '/og-image.jpg', // Add an Open Graph image to /public folder
         width: 1200,
         height: 630,
-        alt: 'Adam Syahir - Software Engineer',
+        alt: 'Adam Syahir - Software Developer',
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Adam Syahir - Software Engineer',
-    description: 'Software Engineer at Novosoft Resources. Building thoughtful digital experiences with modern web technologies.',
-    images: ['/og-image.jpg'], // Add a Twitter card image to /public folder
-    creator: '@yourtwitterhandle', // Update with your Twitter handle if you have one
   },
   robots: {
     index: true,
