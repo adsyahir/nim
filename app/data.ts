@@ -50,17 +50,33 @@ type TechStack = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Borak',
+    name: 'Thriftspot (WIP)',
+    description: 'A web application that helps you find the best thrift stores near you.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: ['Nuxt.js', 'Laravel', 'MySQL', 'Tailwind CSS'],
+    // preview: 'https://borak-staging.adsyahir.com/',
+    github: 'https://github.com/adsyahir/thriftspot-frontend',
+    link: 'https://borak-staging.adsyahir.com/',
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/thriftspot-1.png',
+    images: ['/img/thriftspot-1.png'],
+    id: 'project-thrifspot',
+  },
+  {
+    name: 'Borak (WIP)',
     description: 'Real-time chat application with end-to-end encryption for secure messaging.',
     type: 'Web Application',
     client: 'Personal',
     languages: ['Next.js', 'Node.js', 'WebSockets'],
-    preview: 'https://borak-staging.adsyahir.com/',
-    github: 'https://github.com/adsyahir/borak',
+    // preview: 'https://borak-staging.adsyahir.com/',
+    github: 'https://github.com/adsyahir/chat-app-frontend',
     link: 'https://borak-staging.adsyahir.com/',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
     image: '/img/borak.png',
+    images: ['/img/chat-app-1.jpeg','/img/chat-app-2.png', '/img/chat-app-3.png'],
     id: 'project-borak',
   },
   {
