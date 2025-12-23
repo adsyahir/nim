@@ -55,9 +55,7 @@ function ProjectImage({ images, alt }: ProjectImageProps) {
   return (
     <MorphingDialog
       transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
+        duration: 0,
       }}
     >
       <MorphingDialogTrigger>
