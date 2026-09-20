@@ -6,9 +6,9 @@ type Project = {
   languages: string[]
   preview?: string
   github?: string
-  link: string
+  link?: string
   video: string
-  image: string
+  image?: string
   images?: string[]
   id: string
 }
@@ -49,6 +49,100 @@ type TechStack = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    name: 'Wedding Card V2',
+    description:
+      'Digital Malay wedding invitation with an admin panel — guests RSVP and leave wishes, while the couple edits every section, uploads the gallery, and reads visitor analytics without redeploying.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: [
+      'Next.js 15',
+      'TypeScript',
+      'Cloudflare Workers',
+      'D1',
+      'Drizzle ORM',
+      'R2',
+      'Tailwind CSS',
+    ],
+    github: 'https://github.com/adsyahir/wedding-card',
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/wedding-card-v2.jpg',
+    images: [
+      '/img/wedding-card-v2.jpg',
+      '/img/wedding-card-v2-3.jpg',
+      '/img/wedding-card-v2-4.jpg',
+      '/img/wedding-card-v2-5.jpg',
+      '/img/wedding-card-v2-2.jpg',
+    ],
+    id: 'project-wedding-card-v2',
+  },
+  {
+    name: 'InvoiceHub (WIP)',
+    description:
+      'Multi-tenant B2B invoicing and payments platform built for Malaysian billing — MYR, 8% SST, PDF invoices, payment tracking, and per-tenant roles and audit trails.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: [
+      'React 19',
+      'TypeScript',
+      'Vite',
+      'TanStack Query',
+      'Java 25',
+      'Spring Boot 4',
+      'PostgreSQL',
+      'Flyway',
+      'Kafka',
+      'Docker',
+    ],
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/invoice-hub-1.jpg',
+    images: ['/img/invoice-hub-1.jpg'],
+    id: 'project-invoice-hub',
+  },
+  {
+    name: 'Restaurant Order & Menu System (WIP)',
+    description:
+      'Order and menu management for small restaurants — table orders, a live kitchen display, menu and availability management, and a sales dashboard.',
+    type: 'Web Application',
+    client: 'Personal',
+    languages: [
+      'Nuxt 4',
+      'Vue 3',
+      'TypeScript',
+      'Pinia',
+      'Laravel 13',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'Kubernetes',
+    ],
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/img/restaurant-admin-dashboard.jpg',
+    images: [
+      '/img/restaurant-admin-dashboard.jpg',
+      '/img/restaurant-admin-kitchen.jpg',
+      '/img/restaurant-admin-orders.jpg',
+      '/img/restaurant-admin-menu.jpg',
+      '/img/restaurant-menu-2.jpg',
+      '/img/restaurant-menu-1.jpg',
+      '/img/restaurant-menu-3.jpg',
+    ],
+    id: 'project-restaurant-menu',
+  },
+  {
+    name: 'PayGuard (In Progress)',
+    description:
+      'Payment processing platform with fraud screening, split across Spring Cloud microservices — gateway, service discovery, config server, payments, fraud engine, reconciliation, and notifications.',
+    type: 'Backend / Microservices',
+    client: 'Personal',
+    languages: ['Java 21', 'Spring Boot', 'Spring Cloud', 'Microservices', 'Maven'],
+    video:
+      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    id: 'project-pay-guard',
+  },
   {
     name: 'Thriftspot (WIP)',
     description: 'A web application that helps you find the best thrift stores near you.',
