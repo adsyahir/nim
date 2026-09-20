@@ -127,6 +127,16 @@ function ProjectImage({ images, alt }: ProjectImageProps) {
   )
 }
 
+function ProjectPlaceholder({ name }: { name: string }) {
+  return (
+    <div className="flex aspect-video w-full items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-900">
+      <span className="px-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        {name}
+      </span>
+    </div>
+  )
+}
+
 export default function Portfolio() {
   return (
     <motion.main
@@ -150,10 +160,15 @@ export default function Portfolio() {
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-3">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectImage
-                  images={project.images || [project.image]}
-                  alt={project.name}
-                />
+                {(() => {
+                  const images = project.images ?? (project.image ? [project.image] : [])
+
+                  return images.length > 0 ? (
+                    <ProjectImage images={images} alt={project.name} />
+                  ) : (
+                    <ProjectPlaceholder name={project.name} />
+                  )
+                })()}
               </div>
               <div className="px-1 space-y-3">
                 <div>
